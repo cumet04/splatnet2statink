@@ -51,6 +51,8 @@ except (IOError, ValueError):
 	config_data = json.load(config_file)
 	config_file.close()
 
+filename = None
+
 #########################
 ## API KEYS AND TOKENS ##
 API_KEY       = config_data["api_key"] # for stat.ink
