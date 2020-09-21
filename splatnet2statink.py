@@ -14,7 +14,7 @@ from past.utils import old_div
 import os.path, argparse, sys
 import requests, json, time, datetime, random, re
 import msgpack, uuid
-import iksm, dbs, salmonrun
+from . import iksm, dbs, salmonrun
 from io import BytesIO
 from operator import itemgetter
 from distutils.version import StrictVersion
