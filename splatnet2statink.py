@@ -12,6 +12,7 @@ from builtins import str
 from builtins import range
 from past.utils import old_div
 import os.path, argparse, sys
+import os
 import requests, json, time, datetime, random, re
 import msgpack, uuid
 from . import iksm, dbs, salmonrun
@@ -30,7 +31,10 @@ if getattr(sys, 'frozen', False):
 	app_path = os.path.dirname(sys.executable)
 elif __file__:
 	app_path = os.path.dirname(__file__)
-config_path = os.path.join(app_path, "config.txt")
+if "CONFIG_FILE_PATH" in os.environ:
+    config_path = os.environ["CONFIG_FILE_PATH"]
+else:
+    config_path = os.path.join(app_path, "config.txt")
 
 try:
 	config_file = open(config_path, "r")
